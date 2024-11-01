@@ -1,0 +1,420 @@
+<style>
+    .zt-content {
+        /*width: 800px;*/
+        height: 100%;
+        clear: both;
+        margin-left: -20px;
+        overflow: auto;
+        font-family: Helvetica;
+
+    }
+
+    .zt-top {
+        background: url('{ASSETS_PATH}/assets/images/bg1-connected.png');
+        width: 100%;
+        height: 569px;
+    }
+
+    .zt-text {
+        /*width: fit-content;*/
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 110px;
+        color: #fff;
+    }
+
+    .zt-text h1 {
+        color: #ffffff;
+        font-size: 40px;
+        font-weight: bold;
+        margin: 25px;
+    }
+
+    .zt-text > .zt-logo {
+        display: inline-block;
+    }
+
+    .zt-text > .zt-logo img {
+        float: left;
+    }
+
+    .zt-logo a {
+        color: #ffffff;
+    }
+
+    .zt-text > .zt-logo p {
+        float: left;
+        margin: 0;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 1.2;
+        margin-left: 12px;
+    }
+
+    .zt-text > .zt-connect {
+        font-size: 19px;
+        width: 400px;
+        text-transform: capitalize;
+        font-weight: 600;
+        line-height: 2;
+        margin: 32px auto 0 auto;
+    }
+
+    .zt-button-row {
+        width: 700px;
+        margin: 50px auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        /*margin-top: 35px;*/
+    }
+
+    .zt-btn {
+        width: 200px;
+        padding: 11px 0;
+        margin: 14px;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .zt-btn.zt-btn-normal {
+        border: 2px solid #fff;
+        border-radius: 3px;
+    }
+
+    .zt-btn.zt-btn-green {
+        background: #10D382;
+        border-radius: 3px;
+        border: 2px solid rgba(255, 255, 255, 0);
+    }
+
+    .zt-icon-1 {
+        margin: 3px 16px -4px 0;
+    }
+
+    .zt-icon-2 {
+
+        margin: 4px 16px -3px 0;
+    }
+
+    .zt-icon-3 {
+        width: 13px;
+        margin: 1px 16px -6px 0;
+    }
+
+    .zt-left {
+        width: 45%;
+        margin-left: 60px;
+        float: left;
+
+    }
+
+    /*.zt-left.md-text {*/
+    /*margin-top: 7%;*/
+    /*}*/
+
+    .zt-left.md-text, .zt-right.md-text {
+        margin-top: 5%;
+        width: 37%;
+    }
+
+    .md-text > h1 {
+        font-family: Helvetica;
+        font-size: 28px;
+        color: #000000;
+        line-height: 48px;
+        font-weight: 500;
+
+    }
+
+    .md-text > p {
+        font-family: Helvetica;
+        font-size: 14px;
+        color: #000000;
+        line-height: 28px;
+    }
+
+    .zt-right {
+        width: 45%;
+        height: 100%;
+        float: right;
+    }
+
+    .zt-right > img, .zt-left > img {
+        width: 100%;
+    }
+
+    .zt-middle {
+        background-color: #fff;
+        height: 400px;
+        padding: 10% 10% 0 5%;
+        /* position: relative; */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .zt-middle.last {
+        height: 480px;
+    }
+
+    .green-dash {
+        background-color: #38D382;
+        height: 4px;
+        width: 64px;
+        display: block;
+        border-radius: 8px;
+    }
+
+    .zt-bottom {
+        background: url('{ASSETS_PATH}/assets/images/bg2-connected.png');
+        width: 100%;
+        height: 448px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 7% 10% 0 10%;
+    }
+
+    .zt-bottom > .zt-notice {
+        font-family: Helvetica;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.72);
+        letter-spacing: 2px;
+        text-align: center;
+        line-height: 28px;
+
+        margin: 0 auto;
+        display: block;
+        /*width: fit-content;*/
+        /*color: #fff;*/
+        /*font-size: 14px;*/
+        text-transform: uppercase;
+        /*font-weight: 100;*/
+        /*padding: 9% 0% 0% 0%;*/
+
+    }
+
+    .zt-bottom > h2 {
+
+        font-family: Helvetica;
+        font-size: 40px;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 64px;
+
+        /*text-align: center;*/
+        /*font-size: 28px;*/
+        /*width: 700px;*/
+        /*margin: 0 auto;*/
+        /*line-height: 1.6;*/
+        /*margin-top: 2%;*/
+        /*color: #ffffff;*/
+    }
+
+    .zt-bottom > .zt-up {
+        background: url('{ASSETS_PATH}/assets/images/arrow-up-circle.png');
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        display: block;
+        background-size: contain;
+        cursor: pointer;
+    }
+
+    .zt-sign-out {
+
+        position: absolute;
+        background-size: cover;
+        right: 16px;
+        top: 25px;
+        cursor: pointer;
+        color: #ffffff;
+        display: inline-block;
+    }
+
+    .zt-sign-out > .icon {
+        background: url('{ASSETS_PATH}/assets/images/sign-out.png');
+        width: 16px;
+        height: 16px;
+        display: block;
+        float: right;
+        margin-left: 10px;
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (orientation: portrait) {
+        /* IPHONE 5/5s */
+        .zt-text {
+            padding-top: 50px;
+        }
+
+        .zt-button-row {
+            flex-direction: column;
+            width: max-content;
+        }
+
+        .zt-left.md-text, .zt-right.md-text {
+            width: 90%;
+            margin-left: 40px;
+        }
+
+        .zt-right {
+            width: 100%;
+            /* padding-left: 42px; */
+            float: inherit;
+            /* margin: 0 auto; */
+            text-align: center;
+            margin-left: 5%;
+        }
+
+        .zt-middle {
+            height: 505px;
+        }
+
+        .zt-left {
+            width: 100%;
+            margin-left: 5%;
+            float: inherit;
+        }
+
+        .zt-middle.last {
+            display: flex;
+            flex-direction: column-reverse;
+            height: 555px;
+            padding: 10% 10% 10% 5%;
+        }
+
+        .md-text > h1 {
+            margin-top: 5px;
+            text-align: left;
+        }
+
+        .md-text > p {
+            text-align: left;
+        }
+
+        .zt-bottom h2 {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .zt-text > .zt-connect {
+            width: 80%;
+        }
+    }
+
+    @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (orientation: portrait) {
+        .zt-text > .zt-connect {
+            width: 80%;
+        }
+
+        .zt-bottom h2 {
+            font-size: 24px;
+            margin-top: 11px;
+            line-height: 34px;
+        }
+    }
+
+    @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (orientation: portrait) {
+
+        .zt-bottom h2 {
+            font-size: 30px;
+            line-height: 45px;
+        }
+
+    }
+
+
+</style>
+
+<div class="zt-content">
+    <span class="zt-sign-out">Update Api Key <span class="icon"></span></span>
+    <div class="zt-top">
+        <div class="zt-text">
+            <div class="zt-logo">
+                <a href="https://ztorie.com" target="_blank">
+                    <img src="{ASSETS_PATH}/assets/images/logo.png">
+                    <p> Ztorie</p>
+                </a>
+            </div>
+            <h1>Connected!</h1>
+            <p class="zt-connect">You can now add Stories to your website as a new post, page, or embed.</p>
+
+            <div class="zt-button-row">
+                <a target="_blank" href="https://app.ztorie.com/story/analytics" class="zt-btn zt-btn-green">
+                    <img src="{ASSETS_PATH}/assets/images/icon-1.png" alt="" class="zt-icon-1">
+                    <span>View Your Stats</span>
+                </a>
+                <a target="_blank" href="https://app.ztorie.com/dashboard" class="zt-btn zt-btn-normal">
+                    <img src="{ASSETS_PATH}/assets/images/icon-2.png" alt="" class="zt-icon-2">
+                    <span>Create Stories</span>
+                </a>
+                <a target="_blank" href="https://ztorie.com/publishers" class="zt-btn zt-btn-normal">
+                    <img src="{ASSETS_PATH}/assets/images/icon-3.png" alt="" class="zt-icon-3">
+                    <span>Monetize stories</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="zt-middle">
+        <!--<div class="zt-left">-->
+        <div class="zt-left md-text">
+            <span class="green-dash"></span>
+            <h1>Create as a Post or Page</h1>
+            <p>Create your AMP Story as a page or post within your blog. This allows you to have a dedicated page for your AMP Story which is perfect for SEO.</p>
+        </div>
+        <!--</div>-->
+        <div class="zt-right">
+            <img src="{ASSETS_PATH}/assets/images/middle-1.png" alt="">
+        </div>
+    </div>
+    <div class="zt-middle last">
+        <div class="zt-left">
+            <img src="{ASSETS_PATH}/assets/images/middle-2.png" alt="">
+        </div>
+        <div class="zt-right md-text" style="margin-top: 0%">
+            <span class="green-dash"></span>
+            <h1>Embed Stories to Your Site</h1>
+            <p>Embed the AMP Story directly within your pages to increase engagement, time on site, and improve your rankings with Google. Give your readers the perfect experience and monetize your stories along the way</p>
+        </div>
+
+    </div>
+    <div class="zt-bottom">
+        <span class="zt-notice">Notice</span>
+        <h2>You can monetize your embedded Stories! Get in touch with us today to get started.</h2>
+        <span class="zt-up"></span>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $('.zt-up').click(function () {
+            $("html, body").animate({scrollTop: 0}, "fast");
+            return false;
+        });
+        $('.zt-sign-out').click(function () {
+            $.ajax({
+                type: "POST",
+                data: {action: 'ztorie_admin_remove_api_key'},
+                url: "/wp-admin/admin-ajax.php",
+                success: function (msg) {
+                    window.location.reload();
+                }
+            });
+        });
+    });
+</script>

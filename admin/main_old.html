@@ -1,0 +1,153 @@
+<style>
+    .content {
+        width: 800px;
+        height: 100%;
+        padding: 20px;
+    }
+
+    table {
+        border: 1px solid #cecece;
+        border-radius: 5px;
+        width: 60%;
+        margin-right: 100px;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    .modal {
+        display: none;
+        position: absolute;
+        top: 5%;
+        left: 0%;
+        width: 94%;
+        height: 500px;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid #cecece;
+    }
+
+    .close-modal {
+        float: right;
+        margin: 6px;
+    }
+
+    .modal-content {
+        padding: 10px;
+        padding-right: 20px;
+    }
+
+    .item:hover {
+        border: 1px solid #cecece;
+        width: 150px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 3px;
+    }
+</style>
+<div class="content">
+    <h1>Ztorie Plugin</h1>
+    <div>
+        <h3>List of stories</h3>
+        <table>
+            <tr>
+                <td><b>Id</b></td>
+                <td><b>View story</b></td>
+                <td><b>Edit story</b></td>
+            </tr>
+            {POSTS}
+        </table>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <button id='add-post'>Add Ztorie</button>
+    </div>
+</div>
+<div id="add-post-modal" class="modal">
+    <div class="close-modal" id="close-modal">✖</div>
+    <div class="modal-content">
+        <h2>Add Ztorie</h2>
+        <h3>Choose a story to add</h3>
+        <div class="list">
+            {MODAL_ADD}
+        </div>
+        <!--<form id="add-post-form">-->
+        <!--<input type="text" value="" name="code" id="code">-->
+        <!--<button type="submit" id="create-ztorie-post">Create post</button>-->
+        <!--</form>-->
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // $('#create-ztorie-post').click(function () {
+        $('#add-post-form').submit(function () {
+            // console.log(jQuery('#code').val());
+            let code = jQuery('#code').val();
+            jQuery.ajax({
+                type: 'post',
+                data: {
+                    action: 'ztorie_admin_add_post',
+                    code: code,
+                    // od: 123
+                    //nonce : ajax.nonce
+                },
+                dataType: 'json',
+                url: '/wp-admin/admin-ajax.php',
+                success: function (data) {
+                    if (data.success) {
+                        alert(data);
+                    } else {
+                        alert(data);
+                    }
+
+                }
+            });
+            window.location.reload();
+            $('#add-post-modal').hide();
+            return false;
+        });
+
+
+        $('#add-post').click(function () {
+            $('#add-post-modal').show();
+        })
+        $('#close-modal').click(function () {
+            $('#add-post-modal').hide();
+        })
+        $('.item').click(function () {
+            // console.log(jQuery(this).find('input').val());
+            // let code = jQuery(this).val();
+            let code = jQuery(this).find('input').val();
+            jQuery.ajax({
+                type: 'post',
+                data: {
+                    action: 'ztorie_admin_add_post',
+                    code: code,
+                    // od: 123
+                    //nonce : ajax.nonce
+                },
+                dataType: 'json',
+                url: '/wp-admin/admin-ajax.php',
+                success: function (data) {
+                    if (data.success) {
+                        alert(data);
+                    } else {
+                        alert(data);
+                    }
+
+                }
+            });
+            window.location.reload();
+            $('#add-post-modal').hide();
+            return false;
+        });
+        // document.getElementById('add-post').onclick = function () {
+        //     document.querySelector('#add-post-modal').style.display = 'block';
+        // };
+    });
+
+</script>

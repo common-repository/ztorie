@@ -1,0 +1,529 @@
+<style>
+    #wpbody-content {
+
+    }
+
+    .zt-content {
+        /*width: 800px;*/
+        height: 100%;
+        clear: both;
+        margin-left: -20px;
+        overflow: auto;
+    }
+
+    table {
+        border: 1px solid #cecece;
+        border-radius: 5px;
+        width: 60%;
+        margin-right: 100px;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    .zt-modal {
+        display: none;
+        position: absolute;
+        top: 5%;
+        left: 0%;
+        width: 94%;
+        height: 500px;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid #cecece;
+    }
+
+    .zt-close-modal {
+        float: right;
+        margin: 6px;
+    }
+
+    .zt-modal-content {
+        padding: 10px;
+        padding-right: 20px;
+    }
+
+    .zt-item:hover {
+        border: 1px solid #cecece;
+        width: 150px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 3px;
+    }
+
+    .zt-background img {
+        width: 100%;
+        opacity: 0.6;
+    }
+
+    .zt-inner {
+        /*padding: 40px;*/
+        color: #fff;
+        height: 100%;
+    }
+
+    .zt-top {
+        background: url('{ASSETS_PATH}/assets/images/blue_background.png');
+        width: 100%;
+        height: 540px;
+    }
+
+    .zt-input {
+        background: #fff;
+        border-radius: 5px;
+        /* width: 278px; */
+        width: 100%;
+        height: 50px;
+        border: 0 !important;
+        padding-left: 5px;
+        box-shadow: none !important;
+        margin-bottom: 2px;
+    }
+
+    .zt-input:focus {
+        border: none;
+        box-shadow: none !important;
+        border-left: 0px !important;
+        border-right: 0px !important;
+        border-top: 0px !important;
+        border-bottom: 2px solid #0093FF !important;
+        height: 52px;
+        margin-bottom: 0px;
+    }
+
+    .zt-btn {
+        background: #10D382;
+    }
+
+    .zt-text {
+
+    }
+
+    .zt-text h3 {
+        color: #ffffff;
+    }
+
+    .zt-text > .zt-logo {
+        display: inline-block;
+    }
+
+    .zt-text > .zt-logo img {
+        float: left;
+    }
+
+    .zt-logo a {
+        color: #ffffff;
+    }
+
+    .zt-text > .zt-logo p {
+        float: left;
+        margin: 0;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 1.35;
+        margin-left: 12px;
+    }
+
+    .zt-text > .zt-connect {
+        font-size: 30px;
+        text-transform: capitalize;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .zt-left {
+        width: 32%;
+        margin-left: 60px;
+        float: left;
+        margin-top: 6%;
+    }
+
+    .zt-right {
+        width: 58%;
+        height: 100%;
+        float: right;
+    }
+
+    .zt-form button {
+        background: #10D382;
+        border-radius: 4px;
+        padding: 10px 20px;
+        line-height: 2;
+        border: 0;
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    .zt-confetti {
+        background: url('{ASSETS_PATH}/assets/images/confetti.png');
+        width: 660px;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: relative;
+    }
+
+    .zt-confetti-text {
+        position: absolute;
+        width: 330px;
+        height: 50%;
+        left: 24%;
+        top: 27%;
+        color: #000;
+    }
+
+    .zt-confetti-text h2 {
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    .zt-ok-icon {
+        color: #10D382;
+    }
+
+    .zt-confetti-text p {
+        font-size: 14px;
+        margin: 0.3em 0;
+    }
+
+    .zt-bottom > .zt-left {
+        margin-top: 15%;
+    }
+
+    .zt-bottom > .zt-left p {
+        font-size: 16px;
+    }
+
+    .zt-update-nag {
+        display: none;
+    }
+
+    .zt-connected {
+        padding: 0;
+        margin: 0px 0px 0 0;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .zt-note {
+        margin-top: 60px;
+    }
+
+    .zt-note a {
+        color: #fff;
+    }
+
+    .wrong-entry {
+        -moz-animation: wrong-log 0.3s linear;
+        -webkit-animation: wrong-log 0.3s linear;
+        animation: wrong-log 0.3s linear;
+    }
+
+    .wrong-entry {
+        border: 1px solid #ed1c24 !important;
+        /*border-color: #!important;*/
+        color: #ed1c24 !important;
+    }
+
+    @-moz-keyframes wrong-log {
+        0%, 100% {
+            transform: translateX(-5px);
+        }
+        20%, 60% {
+            transform: translateX(5px);
+        }
+        40%, 80% {
+            transform: translateX(-5px);
+        }
+    }
+
+    @-webkit-keyframes wrong-log {
+        0%, 100% {
+            transform: translateX(-5px);
+        }
+        20%, 60% {
+            transform: translateX(5px);
+        }
+        40%, 80% {
+            transform: translateX(-5px);
+        }
+    }
+
+    @keyframes wrong-log {
+        0%, 100% {
+            transform: translateX(-5px);
+        }
+        20%, 60% {
+            transform: translateX(5px);
+        }
+        40%, 80% {
+            transform: translateX(-5px);
+        }
+    }
+
+    @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: landscape) {
+        /* IPAD LND */
+        .zt-confetti {
+            background: url(http://wp.loc/wp-content/plugins/ztorie/assets/images/confetti.png);
+            width: 494px;
+            height: 100%;
+            background-repeat: no-repeat;
+            /* background-size: 81%; */
+            position: relative;
+            background-position: 41%;
+            background-size: contain;
+        }
+
+        .zt-confetti-text {
+            position: absolute;
+            width: 300px;
+            height: 50%;
+            left: 22%;
+            top: 31%;
+            color: #000;
+        }
+
+        .zt-confetti-text p {
+            font-size: 12px;
+        }
+
+        .zt-confetti-text h2 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .zt-right img {
+            width: 100%;
+        }
+
+        .zt-inner {
+            overflow-x: hidden;
+        }
+    }
+
+    @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: portrait) {
+        /* IPAD */
+        .zt-confetti {
+            width: 494px;
+            height: 100%;
+            background-repeat: no-repeat;
+            /* background-size: 81%; */
+            position: relative;
+            background-position: 41%;
+            background-size: contain;
+        }
+
+        .zt-confetti-text {
+            position: absolute;
+            width: 300px;
+            height: 50%;
+            left: 22%;
+            top: 31%;
+            color: #000;
+        }
+
+        .zt-confetti-text p {
+            font-size: 12px;
+        }
+
+        .zt-confetti-text h2 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .zt-right img {
+            width: 100%;
+        }
+
+        .zt-inner {
+            overflow-x: hidden;
+        }
+    }
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (orientation: portrait) {
+        /* IPHONE + */
+        .zt-left {
+            width: 82%;
+            margin-left: 36px;
+        }
+
+        .zt-confetti {
+
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: auto;
+            position: relative;
+            background-position-x: 150%;
+            background-position-y: 66%;
+
+        }
+
+        .zt-right {
+            width: 100%;
+            height: 107%;
+            float: left;
+            overflow: hidden;
+        }
+
+        /*.zt-right {*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*float: left;*/
+        /*overflow: hidden;*/
+        /*}*/
+        .zt-confetti-text {
+            left: 6%;
+            top: 26%;
+            width: 275px;
+        }
+
+        /*.zt-confetti-text {*/
+        /*left: 6%;*/
+        /*top: 31%;*/
+        /*}*/
+        .zt-right img {
+            width: 100%;
+        }
+    }
+
+    @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (orientation: portrait) {
+        .zt-confetti-text {
+            left: 6%;
+            top: 31%;
+            width: 320px;
+        }
+
+        .zt-right {
+            width: 100%;
+            height: 109%;
+            float: left;
+            overflow: hidden;
+        }
+
+        .zt-confetti {
+            background-position-y: 0;
+        }
+    }
+
+    @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (orientation: portrait) {
+        .zt-confetti-text {
+
+            width: 350px;
+        }
+
+    }
+
+</style>
+<div class="zt-content">
+    <div class="zt-top">
+        <div class="zt-inner">
+            <div class="zt-left">
+                <div class="zt-text">
+                    <div class="zt-logo">
+                        <a href="https://ztorie.com" target="_blank">
+                            <img src="{ASSETS_PATH}/assets/images/logo.png">
+                            <p> Ztorie</p>
+                        </a>
+                    </div>
+                    <p class="zt-connect">Please connect your Ztorie Account</p>
+                </div>
+
+                <form action="{FORM_ACTION}" method="POST" class="zt-form" autocomplete="off">
+                    <input type="hidden" name="action" value="ztorie_save_settings"/>
+                    <br>
+                    <p class="zt-connected">{MESSAGE}</p>
+                    <input type="text" class="zt-input" name="ztorie_app_key" value='{CODE}' id="personal-code" placeholder="Enter your Ztorie API Key">
+
+                    <br>
+                    <br>
+                    <br>
+                    <button type="submit">Connect</button>
+                    <!--<input  type="submit" value="Submit">-->
+                </form>
+                <div class="zt-note">
+                    <span>* Need an API Key? Find one in your <a target="_blank" href="https://app.ztorie.com/settings/team">Settings.</a></span>
+                    <br>
+                    <span>** If you don't have an account, <a target="_blank" href="https://ztorie.com/register">sign-up with Ztorie.</a></span>
+                </div>
+            </div>
+            <div class="zt-right">
+                <div class="zt-confetti">
+                    <div class="zt-confetti-text">
+                        <h2>Grow with AMP Stories!</h2>
+                        <p>Stories are the fastest growing format of all time, and now they're coming to the web. Easily get started to:</p>
+                        <p><span class="zt-ok-icon">✓ </span>Increase your engagement</p>
+                        <p><span class="zt-ok-icon">✓ </span>Get indexed by Google to be top of search</p>
+                        <p><span class="zt-ok-icon">✓ </span>Better load speed and mobile optimized articles</p>
+                        <p><span class="zt-ok-icon">✓ </span>Send traffic from Facebook, Snapchat, and Instagram Stories to your website stories</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zt-bottom">
+        <div class="zt-left">
+            <p>
+                Give your readers the experience they deserve across all the platforms, and start making revenue as well! AMP Stories is the only network that allows you to monetize your audience through DoubleClick network.
+            </p>
+        </div>
+        <div class="zt-right">
+            <img src="{ASSETS_PATH}/assets/images/Illustration_bottom.png" alt="">
+        </div>
+    </div>
+
+    <!--<div class="background">-->
+    <!--<img src="https://ztorie.com/public/images/bg_1x.png" alt="">-->
+    <!--</div>-->
+
+    <script>
+
+        $(document).ready(function () {
+            $('input[type=text]').focus(function () {
+                $(this).removeClass('wrong-entry');
+            });
+            $('.zt-form').submit(function () {
+                let form = this;
+                if (!$(form).find('input[type=text]').val().length) {
+                    $(form).find('input[type=text]').addClass('wrong-entry');
+                    return false;
+                } else {
+
+                    $.ajax({
+                        type: "POST",
+                        data: {action: 'ztorie_admin_check_api_key', 'apiKey': $(form).find('input[type=text]').val()},
+                        url: "/wp-admin/admin-ajax.php",
+                        success: function (msg) {
+                            if (msg !== 'valid') {
+                                $(form).find('input[type=text]').addClass('wrong-entry');
+                                return false;
+                            }
+                            else {
+                                window.location.reload();
+                            }
+                        }
+                    });
+                    return false;
+                }
+
+            });
+        });
+    </script>
+
+</div>
